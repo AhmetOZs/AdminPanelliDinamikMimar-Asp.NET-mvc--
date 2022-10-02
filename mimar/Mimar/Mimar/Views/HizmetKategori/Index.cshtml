@@ -1,0 +1,33 @@
+﻿@using Mimar.Models.Siniflar;
+@model List<HizmetKategori>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+      
+        <th>
+            Kategori Adı
+        </th>
+        
+
+    </tr>
+   @foreach (var k in Model)
+    {
+        
+    
+
+    <tr>
+ 
+        <td>
+          @k.KategoriAd
+
+        </td>
+        <td><a href="/HizmetKategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a></td>
+        <td><a href="@Url.Action("KategoriGetir","HizmetKategori",new {id=k.KategoriID})" class="btn btn-success">Güncelle</a></td>
+    </tr>
+    }
+</table>
+<a href="/HizmetKategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

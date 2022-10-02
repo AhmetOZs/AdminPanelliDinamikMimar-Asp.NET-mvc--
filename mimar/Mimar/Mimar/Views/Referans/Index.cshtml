@@ -1,0 +1,59 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Referanslar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    //Decleration
+    //List<Hizmetler> hizmetler = ViewBag.HizmetAd ?? new List<Hizmetler>();
+
+}
+<br />
+@using(Html.BeginForm("Index","Referans", FormMethod.Get))
+{
+    @*<p>
+        Ürün Adı: @Html.TextBox("p")
+        <input type="submit" value="Ara"/>
+    </p>*@
+}
+
+<br />
+@*
+@foreach (var item in hizmetler)
+{
+<p>@item.HizmetlerAd</p>
+<p>@item.HizmetlerBaslik</p>
+<p>@item.HizmetlerAciklama</p>
+    
+}*@
+
+<table class="table table-bordered">
+    <tr>
+      
+        <th>Referans Adı</th>
+        <th>Referans Görseli</th>
+        <th>Referans Kategorisi</th>
+    </tr>
+    @foreach(var u in Model)
+    {
+    <tr>
+
+
+        <td>@u.ReferansAd</td>
+        <td> <img src="@u.ReferansGörsel" style="width:100px; height:80px;"/></td>
+        <td>@u.HizmetKategori.KategoriAd</td>
+        
+
+        <td>
+            <a href="/Referans/ReferansSil/@u.ReferansID" class="btn btn-danger">Sil</a>
+        </td>
+        <td>
+            <a href="/Referans/ReferansGetir/@u.ReferansID" class="btn btn-success">Güncelle</a>
+        </td>
+        
+    </tr>
+    }
+</table>
+<a href="/Referans/ReferansEkle/" class="btn btn-info">Yeni Referans</a>
+
+
+        <img src="/images/bg/referansklavuz.png" />

@@ -1,0 +1,33 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Büyük Resim</th>
+        <th>Büyük Resim Sol Yazi</th>
+        <th>Büyük Resim Baslik</th>
+        
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            <td> <img src="@k.BüyükResim" style="width:100px; height:80px;"/></td>
+           
+            <td> @k.BüyükResimSolYazi</td>
+            <td> @k.BüyükResimBaslik</td>
+            
+           
+        <td><a href="@Url.Action("BüyükResimGünGetir","BüyükResimGün",new {id=k.AnaID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+
+
+
+<img src="/images/bg/büyükresimklavuz.png" />

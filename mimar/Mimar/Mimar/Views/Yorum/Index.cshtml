@@ -1,0 +1,33 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Yorum>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        
+        <th>Yorum Açıklama</th>
+        <th>Yorum Ad</th>
+        <th>Yorum Firma</th>
+        
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+           
+            <td> @k.YorumAciklama </td>
+            <td> @k.YorumAd </td>           
+            <td> @k.YorumSirket</td>
+        
+           <td><a href="/Yorum/YorumSil/@k.YorumID" class="btn btn-danger">Sil</a></td>
+        <td><a href="@Url.Action("YorumGetir","Yorum",new {id=k.YorumID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+<a href="/Yorum/YorumEkle" class="btn btn-info">Yorum Ekle</a>
+
+<img src="/images/bg/yorumklavuz.png" />

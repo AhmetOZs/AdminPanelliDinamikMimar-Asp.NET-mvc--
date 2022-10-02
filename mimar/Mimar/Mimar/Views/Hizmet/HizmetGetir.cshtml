@@ -1,0 +1,38 @@
+﻿@model Mimar.Models.Siniflar.Hizmetler
+@{
+    ViewBag.Title = "HizmetGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Hizmet Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("HizmetGüncelle", "Hizmet", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.HizmetlerID)
+    @Html.LabelFor(x => x.HizmetlerAd)
+    @Html.TextBoxFor(x => x.HizmetlerAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HizmetlerResim)
+    <input type="file" src="@Model.HizmetlerResim" name="fileImg"/>
+    <br/>
+    <br/>
+    @Html.LabelFor(x => x.HizmetlerParantezBaslik)
+    @Html.TextBoxFor(x => x.HizmetlerParantezBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HizmetlerBaslik)
+    @Html.TextBoxFor(x => x.HizmetlerBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HizmetlerAciklama)
+    @Html.TextBoxFor(x => x.HizmetlerAciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HizmetlerAciklamaResim)
+    <input type="file" src="@Model.HizmetlerAciklamaResim" name="fileImg2"/>
+    <br />
+    
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+</div>
+}
+

@@ -1,0 +1,29 @@
+﻿@model Mimar.Models.Siniflar.Yorum
+@{
+    ViewBag.Title = "YorumEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<br />
+<h2>Yeni Kategori Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+  
+    <br />
+     @Html.LabelFor(x => x.YorumAciklama)
+     @Html.TextBoxFor(x => x.YorumAciklama, new {@class= "form-control"})
+    <br />
+     @Html.LabelFor(x => x.YorumAd)
+     @Html.TextBoxFor(x => x.YorumAd, new {@class= "form-control"})
+    <br />
+     @Html.LabelFor(x => x.YorumSirket)
+     @Html.TextBoxFor(x => x.YorumSirket, new {@class= "form-control"})
+    <br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Yorum Eklendi")
+        });
+    </script>
+</form>
+

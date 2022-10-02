@@ -1,0 +1,32 @@
+﻿
+@model Mimar.Models.Siniflar.Yorum
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<h2>Yorum Güncelleme</h2>
+<br />
+@using (Html.BeginForm("YorumGüncelle", "Yorum", FormMethod.Post))
+{
+<div class="form-group">
+    
+    @Html.HiddenFor(x => x.YorumID)
+
+    <br />
+     @Html.LabelFor(x => x.YorumAciklama)
+    @Html.TextBoxFor(x => x.YorumAciklama, new { @class = "form-control" })
+    <br/>
+     @Html.LabelFor(x => x.YorumAd)
+    @Html.TextBoxFor(x => x.YorumAd, new { @class = "form-control" })
+     <br/>
+     @Html.LabelFor(x => x.YorumSirket)
+    @Html.TextBoxFor(x => x.YorumSirket, new { @class = "form-control" }) <br/>
+    <br/>
+    
+   
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+</div>
+}

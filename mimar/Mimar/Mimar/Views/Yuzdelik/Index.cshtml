@@ -1,0 +1,54 @@
+﻿
+
+
+@using Mimar.Models.Siniflar
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Yüzdelik 1 oran</th>
+        <th>Yüzdelik 1 Baslik</th>
+        <th>Yüzdelik 1 Aciklama</th>
+        <th>Yüzdelik 2 oran</th>
+        <th>Yüzdelik 2 Baslik</th>
+        <th>Yüzdelik 2 Aciklama</th>
+        <th>Yüzdelik 3 oran</th>
+        <th>Yüzdelik 3 Baslik</th>
+        <th>Yüzdelik 3 Aciklama</th>
+        <th>Yüzdelik 4 oran</th>
+        <th>Yüzdelik 4 Baslik</th>
+        <th>Yüzdelik 4 Aciklama</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            
+           
+            <td> @k.Yuzde1Oran</td>
+            <td> @k.Yuzde1Baslik</td>
+            <td> @k.Yuzde1Aciklama</td>
+            <td> @k.Yuzde2Oran</td>
+            <td> @k.Yuzde2Baslik</td>
+            <td> @k.Yuzde2Aciklama</td>
+            <td> @k.Yuzde3Oran</td>
+            <td> @k.Yuzde3Baslik</td>
+            <td> @k.Yuzde3Aciklama</td>
+            <td> @k.Yuzde4Oran</td>
+            <td> @k.Yde4Baslik</td>
+            <td> @k.Yuzde4Aciklama</td>
+             
+            
+            
+           
+        <td><a href="@Url.Action("YuzdelikGetir","Yuzdelik",new {id=k.AnaID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+
+            <img src="/images/bg/yüzdeklavuz.png" />

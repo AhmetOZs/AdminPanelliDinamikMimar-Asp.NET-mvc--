@@ -1,0 +1,36 @@
+﻿
+
+
+@using Mimar.Models.Siniflar
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Süreç Parantez Başlık</th>
+        <th>Süreç Başlık>
+        <th>Süreç Açıklama</th>
+        
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            
+           
+            <td> @k.SurecParantezBaslik</td>
+            <td> @k.SurecBaslik</td>
+            <td> @k.SurecAciklama</td>
+            
+            
+            
+           
+        <td><a href="@Url.Action("SurecGetir","Surec",new {id=k.AnaID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+
+<img src="/images/bg/süreçkalvuz.png" />

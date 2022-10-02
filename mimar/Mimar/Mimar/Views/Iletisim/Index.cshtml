@@ -1,0 +1,63 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Facebook</th>
+        <th>Intagram</th>
+        <th>Twitter</th>
+        <th>Linkedin</th>
+        <th>İletişim parantez başlık</th>
+        <th>İletişim  başlık</th>
+        <th>İletişim  Metin</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+      
+   
+
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+        <td>@k.Facebook</td>
+        <td>@k.Instagram</td>
+        <td>@k.Instagram</td>
+        <td>@k.Twitter</td>
+        <td>@k.Linkedin</td>
+        <td>@k.IletisimParantezBaslik</td>
+        <td>@k.IletisimBaslik</td>
+        <td>@k.IletisimYazi</td>
+        <td>@k.Adres</td>
+        <td>@k.Mail</td>
+        
+        
+        <td><a href="@Url.Action("IletisimGetir","Iletisim",new {id=k.IletisimID})" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        
+        
+        <th>Alt Menü Açıklama</th>
+   
+
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+        
+        <td>@k.FooterAciklama</td>
+        
+        <td><a href="@Url.Action("IletisimGetir","Iletisim",new {id=k.IletisimID})" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+        <img src="/images/bg/konumklavuz.png" />

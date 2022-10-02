@@ -1,0 +1,55 @@
+﻿@model Mimar.Models.Siniflar.Iletisim
+@{
+    ViewBag.Title = "HakkımdaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Hizmet Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("HakkımdaGüncelle", "Hakkımda", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.IletisimID)
+    @Html.LabelFor(x => x.Facebook)
+    @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+    <br />
+     @Html.LabelFor(x => x.Instagram)
+    @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control" })
+    <br/>
+     @Html.LabelFor(x => x.Twitter)
+    @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control" })
+    <br/>
+     @Html.LabelFor(x => x.Linkedin)
+    @Html.TextBoxFor(x => x.Linkedin, new { @class = "form-control" })
+   
+    <br />
+    @Html.LabelFor(x => x.IletisimParantezBaslik)
+    @Html.TextBoxFor(x => x.IletisimParantezBaslik, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.IletisimBaslik)
+    @Html.TextBoxFor(x => x.IletisimBaslik, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.IletisimYazi)
+    @Html.TextBoxFor(x => x.IletisimYazi, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.Adres)
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+    <br/>
+
+   @Html.LabelFor(x => x.Telefon)
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.Konum)
+    @Html.TextBoxFor(x => x.Konum, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.FooterAciklama)
+    @Html.TextBoxFor(x => x.FooterAciklama, new { @class = "form-control" })
+    <br/>
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+</div>
+}

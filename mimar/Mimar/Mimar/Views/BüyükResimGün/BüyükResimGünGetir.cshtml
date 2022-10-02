@@ -1,0 +1,31 @@
+﻿@model Mimar.Models.Siniflar.Anasayfa
+@{
+    ViewBag.Title = "BüyükResimGünGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Ana başlık Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("BüyükResimGünGüncelle", "BüyükResimGün", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.AnaID)
+    @Html.LabelFor(x => x.BüyükResimSolYazi)
+    @Html.TextBoxFor(x => x.BüyükResimSolYazi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BüyükResim)
+    <input type="file" src="@Model.BüyükResim" name="fileImg"/>
+    <br/>
+    <br/>
+    @Html.LabelFor(x => x.BüyükResimBaslik)
+    @Html.TextBoxFor(x => x.BüyükResimBaslik, new { @class = "form-control" })
+    <br />
+
+   
+    
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+</div>
+}
+

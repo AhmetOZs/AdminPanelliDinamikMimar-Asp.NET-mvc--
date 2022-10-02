@@ -1,0 +1,39 @@
+﻿
+
+
+@model Mimar.Models.Siniflar.Referanslar
+@{
+    ViewBag.Title = "ReferansEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+
+<h2>Yeni Hizmet Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("ReferansEkle", "Referans", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ReferansAd)
+        @Html.TextBoxFor(x => x.ReferansAd, new { @class = "form-control" })
+        <br />
+        <br />
+        
+        @Html.LabelFor(x => x.ReferansGörsel)
+        <input type="file"  name="fileImg"/>
+        <br />
+        <br />
+        @Html.LabelFor(x => x.HizmetKategori.KategoriID)
+        @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new {@class="from-control"})
+        <br />
+        
+        
+        <button class="btn btn-primary">Kaydet</button>
+
+    </form>
+}
+
+
+

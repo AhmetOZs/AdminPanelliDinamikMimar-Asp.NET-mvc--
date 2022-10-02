@@ -1,0 +1,48 @@
+﻿
+
+
+@model Mimar.Models.Siniflar.Hizmetler
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+
+<h2>Yeni Hizmet Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("HizmetEkle", "Hizmet", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.HizmetlerAd)
+        @Html.TextBoxFor(x => x.HizmetlerAd, new { @class = "form-control" })
+        <br />
+        <br />
+        
+        @Html.LabelFor(x => x.HizmetlerResim)
+        <input type="file"  name="fileImg"/>
+        <br />
+        <br />
+        @Html.LabelFor(x => x.HizmetlerParantezBaslik)
+        @Html.TextBoxFor(x => x.HizmetlerParantezBaslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.HizmetlerBaslik)
+        @Html.TextBoxFor(x => x.HizmetlerBaslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.HizmetlerAciklama)
+        @Html.TextBoxFor(x => x.HizmetlerAciklama, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.HizmetlerAciklamaResim)
+       <input type="file"  name="fileImg2"/>
+        <br />
+        <br />
+        
+        <button class="btn btn-primary">Kaydet</button>
+
+    </form>
+}
+
+
+

@@ -1,0 +1,308 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Referanslar>
+@{
+    Layout = null;
+   
+    List<Iletisim> iletisims = ViewBag.iletisim ?? new List<Iletisim>();
+   
+    List<HizmetKategori> hizmetKategoris = ViewBag.kategori ?? new List<HizmetKategori>();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Theratio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/flaticon.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/css/owl.theme.css" />
+    <link rel="stylesheet" href="~/css/magnific-popup.css" />
+    <link rel="stylesheet" href="~/css/lightgallery.css" />
+    <link rel="stylesheet" href="~/css/woocommerce.css" />
+    <link rel="stylesheet" href="~/css/royal-preload.css" />
+
+    <link rel="stylesheet" href="~/style.css" />
+</head>
+
+<body>
+    <div id="royal_preloader"></div>
+    <div id="page" class="site">
+       <header id="site-header" class="site-header header-transparent">
+            <!-- Main Header start -->
+            <div class="octf-main-header is-fixed">
+                <div class="octf-area-wrap">
+                    <div class="container-fluid octf-mainbar-container">
+                        <div class="octf-mainbar">
+                            <div class="octf-mainbar-row octf-row">
+                                <div class="octf-col logo-col no-padding">
+                                    <div id="site-logo" class="site-logo">
+                                        <a href="index.html">
+                                            <img src="~/images/logo.svg" alt="Theratio" class="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="octf-col menu-col no-padding">
+                                    <nav id="site-navigation" class="main-navigation">
+                                        <ul class="menu">
+                                            <li >
+                                                <a href="@Url.Action("Index","Anasayfa")">Ana sayfa</a>
+                                                
+                                            </li>
+                                           
+                                            <li ><a href="@Url.Action("Services","Anasayfa")">Hizmetlerimiz</a>
+                                                
+                                            </li>
+                                            <li class="current-menu-item" ><a href="@Url.Action("ReferansFull","Anasayfa")">Referanslar</a>
+                                                
+                                            </li>
+                                           
+                                            <li ><a href="@Url.Action("Iletisim","Anasayfa")">iletişim</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="octf-col cta-col text-right no-padding">
+                                <!-- Call To Action -->
+                                    <div class="octf-btn-cta">
+
+                                        <div class="octf-sidepanel octf-cta-header">
+                                            <div class="site-overlay panel-overlay"></div>
+                                            <div id="panel-btn" class="panel-btn octf-cta-icons">
+                                                <i class="ot-flaticon-menu"></i>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_mobile">
+                <div class="container-fluid">
+                    <div class="octf-mainbar-row octf-row">
+                        <div class="octf-col">
+                            <div class="mlogo_wrapper clearfix">
+                                <div class="mobile_logo">
+                                    <a href="index.html">
+                                        <img src="~/images/logo.svg" alt="Theratio">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="octf-col justify-content-end">
+                           
+                            <div class="octf-menu-mobile octf-cta-header">
+                                <div id="mmenu-toggle" class="mmenu-toggle">
+                                    <button><i class="ot-flaticon-menu"></i></button>
+                                </div>
+                                <div class="site-overlay mmenu-overlay"></div>
+                                <div id="mmenu-wrapper" class="mmenu-wrapper on-right">
+                                    <div class="mmenu-inner">
+                                        <a class="mmenu-close" href="#"><i class="ot-flaticon-right-arrow"></i></a>
+                                        <div class="mobile-nav">
+                                            <ul id="menu-main-menu" class="mobile_mainmenu none-style">
+                                                <li class="menu-item-has-children">
+                                                    <a href="@Url.Action("Index","Anasayfa")">Ana Sayfa</a>
+                                                    
+                                                </li>
+                                                
+                                                <li class="menu-item-has-children"><a href="@Url.Action("Services","Anasayfa")">Hizmetler</a>
+                                                   
+                                                </li>
+                                                <li class="current-menu-item"><a href="@Url.Action("ReferansFull","Anasayfa")">Referanslar</a>
+
+                                                </li>
+                                               
+                                                <li class="menu-item-has-children"><a href="@Url.Action("Index","Anasayfa")">İletişim</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @foreach (var a in iletisims)
+        {
+            
+        
+        <div id="side-panel" class="side-panel">
+            <a href="#" class="side-panel-close"><i class="ot-flaticon-close-1"></i></a>
+            <div class="side-panel-block">
+                <div class="side-panel-wrap">
+                    <div class="the-logo">
+                        <a href="index-html">
+                            <img src="images/logo-footer.svg" alt="Theratio">
+                        </a>                    
+                    </div>
+                   
+                    
+                    <div class="ot-heading ">
+                        <h2 class="main-heading">İletişim Bilgileri</h2>
+                    </div>
+                    <div class="side-panel-cinfo">
+                        <ul class="panel-cinfo">
+                            <li class="panel-list-item">
+                                <span class="panel-list-icon"><i class="ot-flaticon-place"></i></span>
+                                <span class="panel-list-text">@a.Adres</span>
+                            </li>
+                            <li class="panel-list-item">
+                                <span class="panel-list-icon"><i class="ot-flaticon-mail"></i></span>
+                                <span class="panel-list-text">@a.Mail</span>
+                            </li>
+                            <li class="panel-list-item">
+                                <span class="panel-list-icon"><i class="ot-flaticon-phone-call"></i></span>
+                                <span class="panel-list-text">@a.Telefon</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="side-panel-social">
+                        <ul>
+                            <li><a href="@a.Twitter" target="_self"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="@a.Facebook" target="_self"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="@a.Linkedin" target="_self"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="@a.Instagram" target="_self"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+
+        <div id="content" class="site-content">
+            <div class="page-header dtable text-center header-transparent pheader-service-detail1" style="background-image:url(/images/bg/pheader-portfolio.jpg)">
+                <div class="dcell">
+                    <div class="container">
+                        <h1 class="page-title">Referanslar</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="@Url.Action("Index","Anasayfa")">Home</a></li>
+                            
+                            <li class="active">Referanslar</li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="our-portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center theratio-align-center">
+                        <div class="ot-heading is-dots">
+                            <span>[ Referanslar ]</span>
+                            
+                        </div>
+                        <div class="space-40"></div>
+                        <div class="project-filter-wrapper">
+                            <ul class="project_filters">
+                                <li><a href="#" data-filter="*" class="selected btn-details">Hepsi<span class="filter-count"></span></a></li>
+                                  @foreach (var b in hizmetKategoris)
+                            {
+                                <li><a class="btn-details" href="#" data-filter=".@b.KategoriID">@b.KategoriAd<span class="filter-count"></span></a></li>         
+                            }
+                            </ul>
+                            <div class="projects-grid pf_3_cols style-1 img-scale w-auto">
+                                <div class="grid-sizer"></div>
+                                @foreach (var a in Model)
+                                {
+                                    
+                                
+                                <div class="project-item @a.KategoriID ">
+                                    <div class="projects-box">
+                                        <div class="projects-thumbnail">
+                                            
+                                                <img src="@a.ReferansGörsel" alt="">
+                                           
+                                            <div class="overlay">
+                                                <h5>@a.ReferansAd</h5>
+                                                <i class="ot-flaticon-add"></i>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <div class="portfolio-info-inner">
+                                                <h5>@a.ReferansAd</h5>
+                                                <p class="portfolio-cates">[@a.HizmetKategori.KategoriAd]</p> 
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                             }
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+@foreach (var i in iletisims)
+        {
+            
+       
+<footer id="site-footer" class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 mb-4 mb-xl-0">
+                    <div class="widget-footer footer-side-nav">
+                        <img src="~/images/logo-footer.svg" class="footer-logo" alt="">
+                        <p>@i.FooterAciklama</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right">
+                    <div class="widget-footer footer-side-nav">
+                        <h6>Contacts</h6>
+                        <ul class="footer-list">
+                            <li class="footer-list-item">
+                                <span class="list-item-icon"><i class="ot-flaticon-place"></i></span>
+                                <span class="list-item-text">@i.Adres</span>
+                            </li>
+                            <li class="footer-list-item">
+                                <span class="list-item-icon"><i class="ot-flaticon-mail"></i></span>
+                                <span class="list-item-text">@i.Mail</span>
+                            </li>
+                            <li class="footer-list-item">
+                                <span class="list-item-icon"><i class="ot-flaticon-phone-call"></i></span>
+                                <span class="list-item-text">@i.Telefon</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- #site-footer -->
+}
+</div><!-- #page -->
+<a id="back-to-top" href="#" class="show"><i class="ot-flaticon-left-arrow"></i></a>
+        <!-- jQuery -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/mousewheel.min.js"></script>
+    <script src="~/js/lightgallery-all.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/easypiechart.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script src="~/js/royal_preloader.min.js"></script>
+    <script>
+        window.jQuery = window.$ = jQuery;  
+        (function($) { "use strict";
+            //Preloader
+            Royal_Preloader.config({
+                mode           :   'progress',
+                background     :   '#1a1a1a',
+            });
+        })(jQuery);
+    </script>  
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿
+
+@using Mimar.Models.Siniflar
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Aşama 1 Başlık</th>
+        <th>Aşama 1 Açıklama</th>
+        <th>Aşama 2 Başlık</th>
+        <th>Aşama 2 Açıklama</th>
+        <th>Aşama 3 Başlık</th>
+        <th>Aşama 3 Açıklama</th>
+        <th>Aşama 4 Başlık</th>
+        <th>Aşama 4 Açıklama</th>
+        
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            
+           
+            <td> @k.Asama1Baslik</td>
+            <td> @k.Asama1Aciklama</td>
+            <td> @k.Asama2Baslik</td>
+            <td> @k.Asama2Aciklama</td>
+            <td> @k.Asama3Baslik</td>
+            <td> @k.Asama3Aciklama</td>
+            <td> @k.Asama4Baslik</td>
+            <td> @k.Asama4Aciklama</td>
+           
+            
+            
+           
+        <td><a href="@Url.Action("AsamaGetir","Asama",new {id=k.AnaID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+
+<img src="/images/bg/asamaklavuz.png" />

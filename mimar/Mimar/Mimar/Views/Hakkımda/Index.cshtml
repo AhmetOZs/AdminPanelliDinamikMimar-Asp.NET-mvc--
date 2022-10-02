@@ -1,0 +1,41 @@
+﻿
+
+@using Mimar.Models.Siniflar
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Hakkimda parantez baslik</th>
+        <th>Hakkimda Baslik1</th>
+        <th>Hakkimda Aciklama1</th>
+        <th>Hakkimda Baslik2</th>
+        <th>Hakkimda Aciklama2</th>
+        <th>Hakkimda Resim</th>
+        
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            
+           
+            <td> @k.Hakkimdaparantezbaslik</td>
+            <td> @k.HakkimdaBaslik1</td>
+            <td> @k.HakkimdaAciklama1</td>
+            <td> @k.HakkimdaBaslik2</td>
+            <td> @k.HakkimdaAciklama2</td>
+             <td> <img src="@k.HakkimdaResim" style="width:100px; height:80px;"/></td>
+            
+            
+           
+        <td><a href="@Url.Action("HakkımdaGetir","Hakkımda",new {id=k.AnaID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+
+            <img src="/images/bg/hakkımdaklavuz.png" />

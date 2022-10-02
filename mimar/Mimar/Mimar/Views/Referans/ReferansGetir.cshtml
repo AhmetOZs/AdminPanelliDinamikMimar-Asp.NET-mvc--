@@ -1,0 +1,29 @@
+﻿@model Mimar.Models.Siniflar.Referanslar
+@{
+    ViewBag.Title = "ReferansGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Referans Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("ReferansGüncelle", "Referans", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.ReferansID)
+    @Html.LabelFor(x => x.ReferansAd)
+    @Html.TextBoxFor(x => x.ReferansAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ReferansGörsel)
+    <input type="file" src="@Model.ReferansGörsel" name="fileImg"/>
+    <br/>
+    <br/>
+    @Html.LabelFor(x => x.HizmetKategori.KategoriID)
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+   <br/>
+    
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+
+</div>
+}

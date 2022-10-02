@@ -1,0 +1,42 @@
+﻿@using Mimar.Models.Siniflar
+@model List<Hizmetler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Hizmet Adı</th>
+        <th>Hizmet Resmi</th>
+        <th>Hizmet Parantez Başlık</th>
+        <th>Hizmet Başlk</th>
+        <th>Hizmet Açıklama</th>
+        <th>Hizmet Açıklama Resim</th>
+        <th>Durum</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            <td> @k.HizmetlerAd </td>
+            <td> <img src="@k.HizmetlerResim" style="width:100px; height:80px;"/></td>
+            <td> @k.HizmetlerParantezBaslik</td>
+            <td> @k.HizmetlerBaslik</td>
+            <td> @k.HizmetlerAciklama</td>
+            <td> <img src="@k.HizmetlerAciklamaResim" style="width:100px; height:80px;"/></td>
+            <td> @k.HizmetlerStatus</td>
+           <td><a href="/Hizmet/HizmetSil/@k.HizmetlerID" class="btn btn-danger">Sil</a></td>
+        <td><a href="@Url.Action("HizmetGetir","Hizmet",new {id=k.HizmetlerID})" class="btn btn-success">Güncelle</a></td>
+          </tr>
+    }
+</table>
+<a href="/Hizmet/HizmetEkle" class="btn btn-info">Hizmet Ekle</a>
+<br />
+<br />
+<br />
+<br />
+
+
+            <img src="/images/bg/hizmetklavuz.png" />
